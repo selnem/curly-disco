@@ -7,5 +7,11 @@ int main(){
     for(int i=0;i<8;i++){
         putchar(ch_arr[ch_order[i]]);
     }
+    
+    printf("\nprint long\n");
+    char *chLong_arr[]={"Hello","World"};
+    for(int i=0;i<2;i++){
+        puts(chLong_arr[i]);
+    }
     return 0;
 }

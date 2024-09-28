@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     "/Users/jeonseonghwan/curly-disco/프입/week4/week4_test3"
+relocations:     []
+...

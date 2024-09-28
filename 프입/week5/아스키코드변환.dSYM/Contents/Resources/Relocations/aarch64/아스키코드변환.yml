@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     "/Users/jeonseonghwan/curly-disco/프입/week5/아스키코드변환"
+relocations:     []
+...
