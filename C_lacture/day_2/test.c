@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(){
-  int N = 0x1F, M = 0xF1 ;
-    N &= M ;
-    printf("%d",N);
-    return 0;
+  float u=1.3,l=1.2,h=2.0,ans;
+  ans=((u+l)*h)/2;
+  printf("%d",ans);
+  return 0;
 }

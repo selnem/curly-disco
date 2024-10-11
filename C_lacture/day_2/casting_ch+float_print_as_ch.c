@@ -1,7 +1,8 @@
 #include <stdio.h>
 int main(){
-char ch = 'C';
-float F = 5.0;
-printf( "%c",(int)(ch+F));
-return 0;
+    int x=1,a=1,y=0,b=0;
+    y=++x;
+    b=a++;
+    printf("y:%d b:%d x:%d a:%d",y,b,x,a);
+    return 0;
 }
