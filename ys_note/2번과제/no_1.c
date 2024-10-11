@@ -28,6 +28,10 @@ int calculate(char cmd,float num1){
         case (int)'E':
             printf("= %f",accumulator);
             break;
+        default:
+            printf("error Please enter again");
+            break;
+
 
 
     }
