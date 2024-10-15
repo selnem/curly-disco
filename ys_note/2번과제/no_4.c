@@ -1,5 +1,5 @@
 #include<stdio.h>
-int main(){
+int main(void){
     int num[3],max,min;
     for(int i=0;i<3;i++){
         scanf("%d",&num[i]);
