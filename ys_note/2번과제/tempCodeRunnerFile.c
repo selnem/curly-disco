@@ -22,4 +22,5 @@ int main(){
     printf("\n");
     printf("sum of size %d",sum);
     return 0;
+    //ㅁㄴㅇㄹ
 }
