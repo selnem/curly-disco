@@ -1,2 +1,2 @@
 
-            printf("= %f",accumulator);
+            {
