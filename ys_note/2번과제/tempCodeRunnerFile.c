@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main(){
     int arr[5][5]={{1,0,0,1,0},{1,1,0,1,1},{0,1,0,0,1},{1,1,1,0,0},{0,0,1,1,1}};
-    int arrOfNum[5][2];
+    int arrOfNum[5][2];//{(1,2),(2,3),(4,1)}
     int k=0;
     for(int i=0;i<5;i++){
         for(int j=0;j<3;j++){
@@ -17,10 +17,9 @@ int main(){
     int sum=0;
     for(int s=0;s<k;s++){
         printf("%d's location,%p\n",s+1,&arr[arrOfNum[s][0]][arrOfNum[s][1]]);
-        sum+=sizeof(arr[arrOfNum[s][0]][arrOfNum[s][1]])*3;
+        sum+=sizeof(arr[arrOfNum[s][0]][arrOfNum[s][1]])*3;//sizeof(arr[0][0])*3
     }
     printf("\n");
     printf("sum of size %d",sum);
     return 0;
-    //ㅁㄴㅇㄹ
 }

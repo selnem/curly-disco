@@ -6,6 +6,7 @@ int star(int n){
     for(int i=0;i<n;i++){
         printf("*");
     }
+    
     printf("\n");
     star(n-1);
     printf("\n");
