@@ -10,14 +10,7 @@ int main(void){
     scanf("%d",&n);
 
     int *arrNums=(int*)malloc(sizeof(int)*n);
-    //int arr[3];
-    /*
-    for (int i=0;i<3;i++){
-    scanf("%d",&arr[i]);
-    }
-    */
-
-    
+  
     printf("input num n time's");
     for(int i=0;i<n;i++){
         scanf("%d",&arrNums[i]);
