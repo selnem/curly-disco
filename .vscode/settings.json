@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "org-SORTEXT.C": "cpp",
-        "SORTEXT.C": "cpp"
+        "SORTEXT.C": "cpp",
+        "typeinfo": "c"
     },
     "code-runner.runInTerminal": true,
     "terminal.explorerKind": "external"
