@@ -24,7 +24,7 @@ int main(){
     int total_price_set2;
     int total_price;
     /* ------------------------------ */
-
+    int *mPointr_arr[6]={&num_americano,&num_icetea,&num_smoothie,&num_carrot,&num_cheese,&num_choco};
     // 반드시 다음 코드 사용해서 출력하세요. 
     // 주문 받을 때: printf("주문하고자 하는 음료(커피, 아이스티, 스무디)와 케잌(당근, 치즈, 초코)의 갯수를 각각 입력하세요:\n"); 이용하여 출력
     // 음료 갯수가 10개 넘었을 때: printf("음료 갯수가 10개를 넘었습니다. 다시 주문해주세요.\n\n"); 이용하여 출력
@@ -48,7 +48,8 @@ int main(){
             break;
         }        
     }
-    if()
+    
+
     /* 출력 부분: 수정하지 마세요 */ 
     printf("\n품목      갯수   금액\n");
     if (num_set1 > 0)
