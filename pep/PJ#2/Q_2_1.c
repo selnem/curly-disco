@@ -31,37 +31,25 @@ int main(){
     // 케잌 갯수가 10개 넘었을 때: printf("케잌 갯수가 10개를 넘었습니다. 다시 주문해주세요.\n\n"); 이용하여 출력
     
     /*put your answer*/
-
+    int *mPointr_arr[6]={&num_americano,&num_icetea,&num_smoothie,&num_carrot,&num_cheese,&num_choco};
+    int price_arr[6]={price_americano,price_icetea,price_smoothie,price_carrot,price_cheese,price_choco};
     int drinkSum=0,cakeSum=0;
     //합으로 계산할 요소들 초기화
     num_set1=0;
     num_set2=0;
     total_price_set1=0;
     total_price_set2=0;
-    total_price=0;
-
-    typedef struct menu{
-        int *num_menu;
-        int Menu_price;
-    }St_menu;
-
-    St_menu drink_arr[3]={{&num_americano,price_americano},{&num_icetea,price_icetea},{&num_smoothie,price_smoothie}};
-    St_menu cake_arr[3]={{&num_carrot,price_carrot},{&num_cheese,price_cheese},{&num_choco,price_choco}};
-    St_menu temp;
     while(1){
-        drinkSum=0;
-        cakeSum=0;
+        
         printf("주문하고자 하는 음료(커피, 아이스티, 스무디)와 케잌(당근, 치즈, 초코)의 갯수를 각각 입력하세요:\n");
-        for(int i=0;i<3;i++){
-            scanf("%d",drink_arr[i].num_menu);
+        for(int i=0;i<6;i++){
+            scanf("%d",mPointr_arr[i]);
         }
         for(int i=0;i<3;i++){
-            scanf("%d",cake_arr[i].num_menu);
+            drinkSum+= *mPointr_arr[i];
+            cakeSum+= *mPointr_arr[i+3];
         }
-        for(int i=0;i<3;i++){
-            drinkSum+= *(drink_arr[i].num_menu);
-            cakeSum+= *(cake_arr[i].num_menu);
-        }
+        
         if(drinkSum>10){
             printf("음료 갯수가 10개를 넘었습니다. 다시 주문해주세요.\n\n");
             continue;
@@ -74,40 +62,24 @@ int main(){
             break;
         }        
     }
-    //구조체 배열 버브 정렬 가격순 정렬 케이크 음료 각각
-    for(int i=0;i<2;i++){
-        for(int j=0;j<2-i;j++){
-            if(drink_arr[j].Menu_price<drink_arr[j+1].Menu_price){
-                temp=drink_arr[j];
-                drink_arr[j]=drink_arr[j+1];
-                drink_arr[j+1]=temp;
-            }
-            if(cake_arr[j].Menu_price<cake_arr[j+1].Menu_price){
-                temp=cake_arr[j];
-                cake_arr[j]=cake_arr[j+1];
-                cake_arr[j+1]=temp;
-            }
-        }
-    }
-
-     while(cakeSum>=2&&drinkSum>=2){
+    while(cakeSum>=2&&drinkSum>=2){
         int Dcnt=2,Ccnt=2;//음료 케이크 빼야할 횟수
-        int Dindex=0,Cindex=0;
+        int Dindex=2,Cindex=3;//Menu 배열 인덱스 음료 가격순서 2>1>0 케이크 3>4>5
         while(Dcnt>0){
-            if((*(drink_arr[Dindex].num_menu))>0){
+            if(*mPointr_arr[Dindex]>0){
                 Dcnt--;
-                *(drink_arr[Dindex].num_menu)-=1;
-                total_price_set1+=drink_arr[Dindex].Menu_price;
+                *mPointr_arr[Dindex]--;
+                total_price_set1+=price_arr[Dindex];
             }
             else{
-                Dindex++;
+                Dindex--;
             }
         }
         while(Ccnt>0){
-            if((*(cake_arr[Cindex].num_menu))>0){
+            if(*mPointr_arr[Cindex]>0){
                 Ccnt--;
-                *(cake_arr[Cindex].num_menu)-=1;
-                total_price_set1+=cake_arr[Cindex].Menu_price;
+                *mPointr_arr[Cindex]--;
+                total_price_set1+=price_arr[Cindex];
             }
             else{
                 Cindex++;
@@ -117,24 +89,24 @@ int main(){
         drinkSum-=2;
         num_set1++;
     }
-    while(cakeSum>=1&&drinkSum>=2){
+     while(cakeSum>=1&&drinkSum>=2){
         int Dcnt=2,Ccnt=1;//음료 케이크 빼야할 횟수
-        int Dindex=0,Cindex=0;
+        int Dindex=2,Cindex=3;//Menu 배열 인덱스 음료 가격순서 2>1>0 케이크 3>4>5
         while(Dcnt>0){
-            if(*(drink_arr[Dindex].num_menu)>0){
+            if(*mPointr_arr[Dindex]>0){
                 Dcnt--;
-                *(drink_arr[Dindex].num_menu)-=1;
-                total_price_set2+=drink_arr[Dindex].Menu_price;
+                *mPointr_arr[Dindex]--;
+                total_price_set2+=price_arr[Dindex];
             }
             else{
-                Dindex++;
+                Dindex--;
             }
         }
         while(Ccnt>0){
-            if(*(cake_arr[Cindex].num_menu)>0){
+            if(*mPointr_arr[Cindex]>0){
                 Ccnt--;
-                *(cake_arr[Cindex].num_menu)-=1;
-                total_price_set2+=cake_arr[Cindex].Menu_price;
+                *mPointr_arr[Cindex]--;
+                total_price_set2+=price_arr[Cindex];
             }
             else{
                 Cindex++;
@@ -144,14 +116,9 @@ int main(){
         drinkSum-=2;
         num_set2++;
     }
-    total_price_set1*=0.8;
-    total_price_set2*=0.9;
-    for(int i=0;i<3;i++){
-        total_price+=(drink_arr[i].Menu_price * *(drink_arr[i].num_menu));
-        total_price+=(cake_arr[i].Menu_price * *(cake_arr[i].num_menu));
-    }
-    total_price+=(total_price_set1+total_price_set2);
     
+    
+
     /* 출력 부분: 수정하지 마세요 */ 
     printf("\n품목      갯수   금액\n");
     if (num_set1 > 0)
