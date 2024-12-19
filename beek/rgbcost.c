@@ -6,7 +6,7 @@ int main(){
     
     int **House=(int**)malloc(sizeof(int*)*n);
     for(int i=0;i<n;i++){
-        House[i]=(int*)malloc(sizeof(int)*3);
+        *(House+i)=(int*)malloc(sizeof(int)*3);
     }
     for(int i=0;i<n;i++){
         for(int j=0;j<3;j++){
