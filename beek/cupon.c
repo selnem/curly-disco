@@ -3,6 +3,7 @@ long int gcd(long int a,long int b);
 long int lcm(long int a, long int b);
 int count(long int k);
 int cal(int N);
+
 int main(){
     int cnt=0;
     int N[1000];

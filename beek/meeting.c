@@ -3,6 +3,7 @@
 
 unsigned int Maxdelta(MEET* sheet,int N);
 int compare(const void *a,const void *b);
+
 typedef struct meet{
     unsigned int start,end;
 }MEET;
@@ -26,8 +27,22 @@ unsigned int Maxdelta(MEET* sheet,int N){
     }
     return maxdelta;
 }
+
 int compare(const void *a,const void *b){
     MEET* tmp1=(MEET*)a;
     MEET* tmp2=(MEET*)b;
-    return tmp1->start-tmp2->start;
+    if(tmp1->start<tmp2->start){
+        return -1;
+    }
+    else if(tmp1->start>tmp2->start){
+        return 1;
+    }
+    else{
+        if(tmp1->end>tmp2->end){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
 }
