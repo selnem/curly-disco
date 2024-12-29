@@ -1,6 +1,7 @@
 #include<iostream>
 int main(){
-    int a=10;
-    int *b=&a;
-    *b+=20;
+    char a[100],b[100];
+    std::cin>>a>>b;
+    std::cout<<a<<b;
+    return 0;
 }
