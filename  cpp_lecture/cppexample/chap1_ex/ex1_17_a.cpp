@@ -7,7 +7,7 @@ int main()
 	int ary[ArySize]={10,20,30,40,50};
 	int sum;
 	sum=ary_sum(ary);
-	cout << "ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : " << sum << endl;
+	cout << "Àê?? Àê??Àê??Àê? Àê?? : " << sum << endl;
 	cout << "main() ArySize : " << &ArySize << endl;
 	return 0;
 }
