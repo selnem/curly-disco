@@ -16,7 +16,7 @@ int total(Savings &s);
 
 int main(){
     Savings coinBox;
-    int unit,cnt,total;
+    int unit,cnt;
     init(coinBox);
     while(1){
         input(unit,cnt);
@@ -27,7 +27,7 @@ int main(){
             save(coinBox,unit,cnt);
         }
     }
-    cout<<"총 저금액 : "<<total<<endl;
+    cout<<"총 저금액 : "<<total(coinBox)<<endl;
     return 0;
 }
 void init(Savings &s){
@@ -37,37 +37,35 @@ void init(Savings &s){
     s.w10=0;
 }
 void input(int &unit,int &cnt){
-    char money[4][4]={"500","100","50","10"};
-    char inmoney[10];
-    int i;
-    do{
+    int coins[4]={500,100,50,10};
+
+    while(1){
         cout<<"동전의 금액 : ";
-        cin>>inmoney;
-        for(i=0;i<4;i++){
-            if(strcmp(inmoney,money[i])==0){
+        cin>>unit;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore(100,'\n');
+            continue;
+        }
+        else if(unit<0){
+            break;
+        }
+        else{
+            int i;
+            for(i=0;i<4;i++){
+                if(unit==coins[i]){
+                    break;
+                }
+            }
+            if(i!=4){
+                cout<<"동전의 개수 : ";
+                cin>>cnt;
                 break;
             }
         }
-    }while(i==4);
-    cout<<"동전의 개수 : ";
-    cin>>cnt;
-    switch(i){
-        case 0:
-            unit=500;
-            break;
-        case 1:
-            unit=100;
-            break;
-        case 2:
-            unit=50;
-            break;
-        case 3:
-            unit=10;
-            break;
-        default:
-            cout<<"error"<<endl;
     }
 }
+
 void save(Savings &s,int unit,int cnt){
     switch(unit){
         case 500:
@@ -87,6 +85,5 @@ void save(Savings &s,int unit,int cnt){
     }
 }
 int total(Savings &s){
-    int total=s.w500*500+s.w100*100+s.w50*50+s.w10*10;
-    return total;
+    return s.w500*500+s.w100*100+s.w50*50+s.w10*10;
 }

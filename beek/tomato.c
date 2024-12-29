@@ -54,14 +54,13 @@ int main(){
     
     return 0;
 }
-int serch_tomato(int **tomato_box, struct tomato **queue,int index,int *total,int m,int n){
+int serch_tomato(int **tomato_box, struct tomato *queue,int index,int *total,int m,int n){
     int x_move[4]={-1,0,1,0};
     int y_move[4]={0,-1,0,1};
     int new_index=0;
     struct tomato* new_queue=(struct tomato*)malloc(sizeof(struct tomato)*m*n);
     if(index==0){
-        free(*queue);
-        *queue=NULL;
+        free(queue);
         return 0;
     }
     for(int i=0;i<index;i++){
@@ -80,6 +79,6 @@ int serch_tomato(int **tomato_box, struct tomato **queue,int index,int *total,in
     }
     loop++;
     free(queue);
-    serch_tomato(tomato_box,&new_queue,new_index,total,m,n);
+    serch_tomato(tomato_box,new_queue,new_index,total,m,n);
     return 0;
 }
