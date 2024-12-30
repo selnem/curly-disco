@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/jeonseonghwan/curly-disco/ cpp_lecture/lecture5/class_ex2'
+relocations:     []
+...
