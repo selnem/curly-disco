@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-#include <windows.h> 
+#include "Windows.h" 
 class  Point
 {
   private : 
@@ -32,11 +32,12 @@ void Point::put_char(char ch)
 int main()
 {
     Point ob1, ob2;
+    int temp;
     ob1.init(20,10);
     ob1.put_char('*');
     ob2.init(60,10);
     ob2.put_char('#');
-    cout << "\n\nÁ¾·á..." << endl;
+    cout << "\n\nì¢…ë£Œ..." << endl;
     return 0;
 }
 

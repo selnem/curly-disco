@@ -13,6 +13,6 @@ int main()
 {
 	Robot* rp;
 	rp = new Robot[3];
-	delete rp; ? 巩力 惯积!!
+	delete rp;// ? 巩力 惯积!!
 		return 0;
 }

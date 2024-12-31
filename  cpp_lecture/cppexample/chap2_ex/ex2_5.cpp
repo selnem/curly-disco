@@ -1,13 +1,13 @@
 #include<iostream>
 using namespace std;
 class Sample {
-private:
-	int num;
-	static int cnt;      // 정적멤버변수 선언부
-public:
-	Sample(int n = 0);
-	void prn() const;
-	static void setNum(int n);  // 정적멤버함수선언
+	private:
+		int num;
+		static int cnt;      // 정적멤버변수 선언부
+	public:
+		Sample(int n = 0);
+		void prn() const;
+		static void setNum(int n);  // 정적멤버함수선언
 };
 
 int Sample::cnt = 0;  // 정적 멤버변수 정의부 
