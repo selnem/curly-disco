@@ -32,7 +32,7 @@ MyString::~MyString()
 //---------------------------------------------------------------------------------------
 MyString &MyString::operator=(const MyString &br)
 {
-	if (this == &br) return *this;
+	if (this == &br) return *this;//만약 내가 내 자신을 대입하려하면 리턴
 	len = br.len;
 	delete[] str;
 	str = new char[len + 1];

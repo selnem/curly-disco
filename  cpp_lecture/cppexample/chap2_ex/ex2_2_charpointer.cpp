@@ -6,34 +6,40 @@ using namespace std;
 // 클래스 선언
 class MoneyBox {
 private:
-	char name[20];
+	char* name;
 	int sum;
 public:
 	MoneyBox();  // 디폴트 생성자
 	MoneyBox(const char* np, int m = 0);  // 오버로디드 생성자
 	MoneyBox(const MoneyBox& br);  // 복사 생성자
-	~MoneyBox() { cout<<"del"<<this->name<<endl;} // 소멸자 
+	~MoneyBox() {
+		cout<<"del"<<this->name<<endl;
+		delete[] name;
+	} // 소멸자 
 	void save(int m);
 	void use(int m);
 	void prn();
 };
 // 멤버함수 정의
 MoneyBox::MoneyBox()
-{
-	strcpy(this->name, "아무개");
+{	
+	name=new char[sizeof("아무개")];
+	strcpy(name,"아무개");
 	this->sum = 0;
 	cout << "디폴트 생성자 호출..." << this->name << endl;
 }
 
 MoneyBox::MoneyBox(const char* np, int m)
 {
+	this->name=new char[strlen(np)+1];
 	strcpy(this->name, np);
 	this->sum = m;
 	cout << "오버로디드 생성자 호출..." << this->name << endl;
 }
 
 MoneyBox::MoneyBox(const MoneyBox& br)
-{
+{	
+	this->name=new char[strlen(br.name)+1];
 	strcpy(this->name, br.name);
 	this->sum = br.sum;
 	cout << "복사 생성자 호출..." << this->name << endl;

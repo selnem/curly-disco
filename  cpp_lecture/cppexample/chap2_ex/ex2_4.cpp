@@ -31,7 +31,7 @@ void Letter::c_prn() const
 	// show();  -> 에러, const멤버함수는 일반 멤버함수 호출불가
 }
 
-void Letter::show()
+void Letter::show()//this 포인터에const Letter const * this 로 앞에 const 가 붙어있다.
 {
 	int i;
 	for (i = 0; i < num; i++) {

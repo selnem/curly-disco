@@ -1,4 +1,4 @@
-#pragma once
+#pragma once//중첩 include 방지 매크로
 #include <iostream>
 using namespace std;
 
