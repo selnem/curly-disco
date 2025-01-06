@@ -3,7 +3,7 @@
 using namespace std;
 #include "iMoneyBox.h"
 
-iMoneyBox::iMoneyBox(const char *np, int m, int l) : MoneyBox(np, m)
+iMoneyBox::iMoneyBox(const char *np, int m, int l) : MoneyBox(np, m)//상속받은 부모 class객체 생성을 콜론초기화로 생성
 {
 	this->limit = l;
 }
