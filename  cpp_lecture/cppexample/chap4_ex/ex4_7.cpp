@@ -6,51 +6,58 @@ private:
 	char name[20];
 	int pay;
 public:
-	Teacher(const char *np = "¾Æ¹«°³", int p = 0) {
+	Teacher(const char *np = "ì•„ë¬´ê°œ", int p = 0) {
 		strcpy(name, np);
 		pay = p;
 	}
-	virtual void teach(){ cout << "°¡¸£Ä£´Ù..." << endl; }
+
+	virtual ~Teacher(){}
+	virtual void teach(){ cout << "ê°€ë¥´ì¹œë‹¤..." << endl; }//virtualì„ ë•”ì‹œ ê°€ë¥´ì¹œë‹¤ë§Œ ë‚˜ì˜¨ë‹¤.
 	void view() {
-		cout << "ÀÌ¸§ : " << name << ", ¼ö¾÷·á : " << pay << endl;
+		cout << "ì´ë¦„ : " << name << ", ìˆ˜ì—…ë£Œ : " << pay << endl;
 	}
 };
 
 class kTeacher : public Teacher {
 public:
-	kTeacher(const char *np = "¾Æ¹«°³", int p = 0) : Teacher(np, p) {}
-	void teach() { cout << "±¹¾î¸¦ °¡¸£Ä£´Ù..." << endl; }
+	kTeacher(const char *np = "ì•„ë¬´ê°œ", int p = 0) : Teacher(np, p) {}
+	void teach() { cout << "êµ­ì–´ë¥¼ ê°€ë¥´ì¹œë‹¤..." << endl; }
 };
 
 class eTeacher : public Teacher {
 public:
-	eTeacher(const char *np = "¾Æ¹«°³", int p = 0) : Teacher(np, p) {}
-	void teach() { cout << "¿µ¾î¸¦ °¡¸£Ä£´Ù..." << endl; }
+	eTeacher(const char *np = "ì•„ë¬´ê°œ", int p = 0) : Teacher(np, p) {}
+	void teach() { cout << "ì˜ì–´ë¥¼ ê°€ë¥´ì¹œë‹¤..." << endl; }
 };
 
 class mTeacher : public Teacher {
 public:
-	mTeacher(const char *np = "¾Æ¹«°³", int p = 0) : Teacher(np, p) {}
-	void teach() { cout << "¼öÇÐÀ» °¡¸£Ä£´Ù..." << endl; }
+	mTeacher(const char *np = "ì•„ë¬´ê°œ", int p = 0) : Teacher(np, p) {}
+	void teach() { cout << "ìˆ˜í•™ì„ ê°€ë¥´ì¹œë‹¤..." << endl; }
 };
 
 int main()
 {
 	Teacher *cheoli[2];
-	cheoli[0] = new kTeacher("È«±æµ¿", 70);
-	cheoli[1] = new mTeacher("ÀÌ¼ø½Å", 80);
+	cheoli[0] = new kTeacher("í™ê¸¸ë™", 70);
+	cheoli[1] = new mTeacher("ì´ìˆœì‹ ", 80);
 
 	Teacher *metel[3];
-	metel[0] = new kTeacher("½Å»çÀÓ´ç", 200);
-	metel[1] = new eTeacher("ÀÓ²©Á¤", 50);
-	metel[2] = new mTeacher("°­°¨Âù", 90);
+	metel[0] = new kTeacher("ì‹ ì‚¬ìž„ë‹¹", 200);
+	metel[1] = new eTeacher("ìž„êº½ì •", 50);
+	metel[2] = new mTeacher("ê°•ê°ì°¬", 90);
 
 	int i;
-	cout << "Ã¶ÀÌÀÇ ¼±»ý´Ô..." << endl;
+	cout << "ì² ì´ì˜ ì„ ìƒë‹˜..." << endl;
 	for (i = 0; i < 2; i++) {
 		cheoli[i]->view();
-		cheoli[i]->teach();  // ´ÙÇü¼º 
+		cheoli[i]->teach();  // ë‹¤í˜•ì„± 
 	}
-
+	for(i=0;i<2;i++){
+		delete cheoli[i];
+	}
+	for(i=0;i<3;i++){
+		delete metel[i];
+	}
 	return 0;
 }

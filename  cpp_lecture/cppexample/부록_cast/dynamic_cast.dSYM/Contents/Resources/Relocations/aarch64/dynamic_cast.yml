@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     "/Users/jeonseonghwan/curly-disco/ cpp_lecture/cppexample/부록_cast/dynamic_cast"
+relocations:     []
+...

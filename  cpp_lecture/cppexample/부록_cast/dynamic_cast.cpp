@@ -51,12 +51,26 @@ int main()
 	{
 		ap = GetObject();
 		ap->view();
-		if (bp = dynamic_cast<B *>(ap))
+		/*
+		if (bp = dynamic_cast<B *>(ap))//만약 A클래스포인터이기 때문에 (B*)로 강제캐스팅을 할시 몇몇 요소들이 degling이 되는 문제가 생김
+										//ap가 B or C객체를 가르키는 경우 캐스팉 성공 A일시 실패 이후 NULL포인터 전달							
+										//dynamic 캐스팅은 B포인터가 가르키는 데이터가 모두 있다면 형변환 하고 만약 없는요소가 있다면 형변환 x
 		{
 			bp->prn();
 		}
+		*/
+		if(bp=dynamic_cast<C*>(ap)){
+			cout<<"c ptn"<<endl;
+		}
+		else if(bp=dynamic_cast<B*>(ap)){
+			cout<<"b ptn"<<endl;
+		}
+		else{
+			cout<<"a ptn"<<endl;
+		}
 		delete ap;
 	}
+	
 
 	return 0;
 }

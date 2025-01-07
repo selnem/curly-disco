@@ -4,13 +4,14 @@ class Base
 {
 public:
 	virtual void view() { cout << "Base view..." << endl; }
+	
 };
 
 class Derived : public Base
 {
 public:
-	virtual void view() { cout << "Derived view..." << endl; } // ÆÄ»ıÅ¬·¡½ºÀÇ virtual 
-															   // Å°¿öµå´Â »ı·« °¡´ÉÇÔ
+	virtual void view() { cout << "Derived view..." << endl; } // íŒŒìƒí´ë˜ìŠ¤ì˜ virtual 
+															   // í‚¤ì›Œë“œëŠ” ìƒëµ ê°€ëŠ¥í•¨
 };
 
 int main()
@@ -18,10 +19,10 @@ int main()
 	Base a, *bp;
 	Derived b;
 
-	bp = &a;     // ±âº»Å¬·¡½ºÀÇ °´Ã¼ ÂüÁ¶
-	bp->view();  // ±âº»Å¬·¡½ºÀÇ viewÇÔ¼ö È£Ãâ
-	bp = &b;     // ÆÄ»ıÅ¬·¡½ºÀÇ °´Ã¼ ÂüÁ¶
-	bp->view();  // ÆÄ»ıÅ¬·¡½ºÀÇ viewÇÔ¼ö È£Ãâ
+	bp = &a;     // ê¸°ë³¸í´ë˜ìŠ¤ì˜ ê°ì²´ ì°¸ì¡°
+	bp->view();  // ê¸°ë³¸í´ë˜ìŠ¤ì˜ viewí•¨ìˆ˜ í˜¸ì¶œ
+	bp = &b;     // íŒŒìƒí´ë˜ìŠ¤ì˜ ê°ì²´ ì°¸ì¡°
+	bp->view();  // íŒŒìƒí´ë˜ìŠ¤ì˜ viewí•¨ìˆ˜ í˜¸ì¶œ
 
 	return 0;
 }

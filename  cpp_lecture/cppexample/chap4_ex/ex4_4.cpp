@@ -6,6 +6,7 @@ class Base{  // 기본클래스
 public:
 	Base() { va=10;}
 	void view() { cout << "Base view..." <<va<< endl; }
+	// virtual void view() { cout << "Base view..." <<va<< endl; } 로 디버깅시 정상 작동
 };
 class Derived : public Base{  // 파생클래스
 	int vb;
@@ -28,7 +29,7 @@ int main()
 	bp->view();  // 기본클래스의 view()호출
 
 	dp = (Derived *)&a;// 하향 캐스팅(down-casting) - 강제(명시적) 형변환 필수
-	dp->view(); // 파생클래스의 view()호출 (vb멤버의 자리에는 무엇이 출력될까?)
+	dp->view(); // 파생클래스의 view()호출 (vb멤버의 자리에는 무엇이 출력될까?)->가비지 출력
 
 	return 0;
 }
