@@ -69,7 +69,7 @@ int MyString::getLen()
 //---------------------------------------------------------------------------------------
 void MyString::setStr(char *cp)
 {
-	if (this->str == cp) return; // 내 문자열을 내가 저장하려고 하면 리턴
+	if (this->str == cp) return; // ?? ??????? ???? ????????? ??? ????
 	len = strlen(cp);
 	delete[]str;
 	str = new char[len + 1];
