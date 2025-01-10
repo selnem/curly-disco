@@ -7,7 +7,7 @@ class Circle{
 
 
     public:
-        Circle(int R):pi(3.14159265359)
+        Circle(int R):pi(3.14159265359),R(R)
         {
             Uarea=pi*R*R;
             Tarea=2*R*R;
@@ -28,6 +28,9 @@ int main(){
     int R;
     cin>>R;
     Circle C=R;
-    cout<<""
+    cout<<fixed;
+    cout.precision(6);
+    cout<<C.getUarea()<<endl<<C.getTarea();
+    return 0;
 
 }
