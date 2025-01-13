@@ -1,7 +1,6 @@
 #include<stdio.h>
 int main(){
-    int a,b,c;
-    a=b=c=3;
-    printf("%d %d %d",a,b,c);
+    int a=-4;
+    printf("%d",a%4);
     return 0;
 }
