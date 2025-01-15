@@ -1,0 +1,88 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+string *Overlap(string *Narr,string *Marr,int N,int M,int &cnt);
+void Merge_sort(string *arr,int left,int right);
+void Merge(string *arr,int left,int mid,int right);
+
+
+int main(){
+    int N,M,cnt;
+    cin>>N>>M;
+    string *D_arr=new string[N];
+    string *B_arr=new string[M];
+    for(int i=0;i<N;i++){
+        cin>>D_arr[i];
+    }
+
+    for(int i=0;i<M;i++){
+        cin>>B_arr[i];
+    }
+
+    string *DB_arr=Overlap(D_arr,B_arr,N,M,cnt);
+    Merge_sort(DB_arr,0,cnt-1);
+    
+    cout<<cnt<<endl;
+
+    for(int i=0;i<cnt;i++){
+        cout<<DB_arr[i]<<'\n';
+    }
+
+    delete[] D_arr;
+    delete[] B_arr;
+    delete[] DB_arr;
+    return 0;
+}
+
+string *Overlap(string *Narr,string *Marr,int N,int M,int& cnt){
+    string *overlap_arr=new string[(N>M?M:N)];
+    cnt=0;
+    for(int i=0;i<N;i++){
+        for(int j=0;j<M;j++){
+            if(Narr[i]==Marr[j]){
+                overlap_arr[cnt++]=Narr[i];
+            }
+        }
+    }
+    return overlap_arr;
+}
+
+void Merge_sort(string *arr,int left,int right){
+    if(left>=right){
+        return;
+    }
+    int mid=(left+right)/2;
+    Merge_sort(arr,left,mid);
+    Merge_sort(arr,mid+1,right);
+    Merge(arr,left,mid,right);
+}
+void Merge(string *arr,int left,int mid,int right){
+    int lIndex=left,rIndex=mid;
+    int indexOfsort=0;
+    rIndex++;
+    string *sort_arr = new string [right-left+1];
+    while(lIndex<=mid&&rIndex<=right){
+        if(arr[lIndex]<=arr[rIndex]){
+            sort_arr[indexOfsort++]=arr[lIndex++];
+        }
+        else{
+            sort_arr[indexOfsort++]=arr[rIndex++];
+        }
+    }
+    if(lIndex>mid){
+        for(int s=rIndex;s<=right;s++){
+            sort_arr[indexOfsort++]=arr[s];
+        }
+    }
+    else{
+        for(int s=lIndex;s<=mid;s++){
+            sort_arr[indexOfsort++]=arr[s];
+        }
+    }
+    indexOfsort=0;
+    for(int i=left;i<=right;i++){
+        arr[i]=sort_arr[indexOfsort++];
+    }
+    delete[] sort_arr;
+}
