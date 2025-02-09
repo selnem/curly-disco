@@ -3,6 +3,7 @@
         "iostream": "cpp",
         "string": "cpp",
         "new": "cpp",
-        "tuple": "c"
+        "tuple": "c",
+        "stack": "cpp"
     }
 }
