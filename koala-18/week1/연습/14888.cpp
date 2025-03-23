@@ -5,7 +5,7 @@ using namespace std;
 int maxx=-(1<<30);
 int minn=1<<30;
 int n;
-int oper_arr[4];
+int oper_arr[4];//연산자 갯수 배열
 void recur(vector<int>&arr,int ans,int d=1);
 int main(){
     int tmp;
