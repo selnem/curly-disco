@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     "/Users/jeonseonghwan/curly-disco/koala-18/week1/연습/15686"
+relocations:     []
+...
