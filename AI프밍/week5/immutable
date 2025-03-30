@@ -1,0 +1,10 @@
+def modify_integer(x):
+    print("org inside fuc",id(x))
+    x+=10
+    print("new ins fuc",id(x))
+
+num=5
+print("bef fuc",num,id(num))
+
+modify_integer(num)
+print("after fuc",num,id(num))

@@ -1,4 +1,4 @@
-len("abc")*("no")
+print(len("abc")*("no",))
 
 print(2*("no","no","no"))
 
@@ -6,6 +6,10 @@ print(2*("no","no","no"))
 print((0,0,0)+(1,))
 
 print((1,1)+(1,1))
+long="hello"
+short="hi"
+(short,long)=(long,short)
+print(short,' ',long)
 
 grocery = []
 grocery.append("bread")

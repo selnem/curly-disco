@@ -13,3 +13,5 @@ print(b)
 #객체를 새로 생성하여 11이라는객체를 만들어 a에다가 주소를 전달한다.
 #따라서 b는여전히 10을 가르키고
 #a는 11을가르키고 있는것이다.
+squares = {x: x**2 for x in range(5)}
+print(squares)
