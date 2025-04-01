@@ -4,7 +4,7 @@
 void free_ptr(int *arr);
 void free_ptr2(int **arr);
 int main(){
-    int *arr=(int *)malloc(12);
+    int *arr=(int *)malloc(sizeof(int)*3);
     int num=4;
     for(int k=0;k<3;k++){
         arr[k]=num++;

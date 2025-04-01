@@ -17,6 +17,9 @@ class DEQ{
             front=back=NULL;
             size=0;
         }
+        ~DEQ(){
+            
+        }
         void pushFront(int d);
         void pushBack(int d);
         int popFront();
