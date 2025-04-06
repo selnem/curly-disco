@@ -7,6 +7,7 @@ int S_station(int n,int num=0,int cnt=0);
 int main(){
     int n;
     cin>>n;
+    int LLc
     cout<<S_station(n);
     return 0;
 }
@@ -26,5 +27,5 @@ int S_station(int n,int sum,int cnt){
         }
         dp[sum][cnt]+=S_station(n,sum+i,cnt+1);
     }
-    return dp[sum][cnt];
+    return dp[sum][cnt]%;
 }
