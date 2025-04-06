@@ -1,0 +1,11 @@
+import torch
+c,h,w=4,2,2
+x=torch.arange(c*h*w).reshape(c,h,w)
+print(x)
+n=2
+y=torch.arange(n*c*h*w).reshape(n,c,h,w)
+y_mps=y.to('mps')
+
+y_slice=y_mps[:,:,0]
+y_split=y.split()
+
