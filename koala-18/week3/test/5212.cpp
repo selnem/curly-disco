@@ -57,7 +57,10 @@ bool Sink(char** mapp,int r,int c){
     for(int i=0;i<4;i++){
         int y=r+dy[i];
         int x=c+dx[i];
-        if(inRange(y,x)&&mapp[y][x]=='.'){
+        if(inRange(y,x)){
+            if(mapp[y][x]=='.') sea++;
+        }
+        else{
             sea++;
         }
     }
@@ -84,7 +87,7 @@ void map_print(char **mapp){
         }
     }
     for(int i=rs;i<=re;i++){
-        for(int j=cs;j<ce;j++){
+        for(int j=cs;j<=ce;j++){
             cout<<mapp[i][j];
         }
         cout<<'\n';
