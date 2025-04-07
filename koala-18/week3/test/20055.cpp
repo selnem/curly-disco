@@ -20,7 +20,7 @@ int main(){
         cin>>belt[i];
         Robot[i]=false;
     }
-    INOUT pos;
+    INOUT pos={0};
     pos.in_R=0;
     pos.out_R=N-1;
     int ans=0;
@@ -33,6 +33,9 @@ int main(){
     cout<<ans;
    
     delete[]belt;
+    delete[]Robot;
+    belt=NULL;
+    Robot=NULL;
     return 0;
 }
 void rotate_belt(INOUT &p,bool *R){
@@ -43,7 +46,7 @@ void rotate_belt(INOUT &p,bool *R){
         robot_cnt--;
     }
 }
-void robot_move(int *belt,bool *robot,INOUT &p){
+void robot_move(int *belt,bool *robot,const INOUT &p){
     if(robot_cnt){
         return;
     }
@@ -68,7 +71,7 @@ void robot_move(int *belt,bool *robot,INOUT &p){
         }
     }
 }
-void robot_put(int *belt,bool *robot,INOUT &p){
+void robot_put(int *belt,bool *robot,const INOUT &p){
     if(belt[p.in_R]&&!robot[p.in_R]){
         belt[p.in_R]--;
         if(belt[p.in_R]==0){
