@@ -18,7 +18,9 @@ class DEQ{
             size=0;
         }
         ~DEQ(){
-            
+            while(!Empty()){
+                popBack();
+            }
         }
         void pushFront(int d);
         void pushBack(int d);
@@ -37,7 +39,7 @@ void DEQ::pushFront(int d){
         tmp->next=NULL;
         back=tmp;
     }
-    else{//새로운 노드의 앞을 가장 앞과 연결
+    else{//새로운 노드의 뒤를 front 노드와 연결, 기존 front의 앞을 연결
         tmp->next=front;
         front->priv=tmp;
     }
@@ -52,7 +54,7 @@ void DEQ::pushBack(int d){
         tmp->priv=NULL;
         front=tmp;
     }
-    else{//새로운 노드에 덱의 가장 뒷부분을 연결
+    else{
         tmp->priv=back;
         back->next=tmp;
     }

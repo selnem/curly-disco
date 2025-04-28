@@ -14,9 +14,9 @@ int main(){
     for(int i=0;i<3;i++){
         printf("notyet %d\n",arr[i]);
     }
-    free(arr);
+    //free(arr);
     //free_ptr(arr);
-    //free_ptr2(&arr);
+    free_ptr2(&arr);
 
     printf("\n\ndo %p\n",arr);
     for(int i=0;i<3;i++){
