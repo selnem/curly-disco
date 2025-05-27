@@ -48,6 +48,13 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "__tree": "cpp",
+        "memory": "cpp",
+        "iomanip": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "sstream": "cpp",
+        "unordered_set": "cpp"
     }
 }

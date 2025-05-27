@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+int a;
 void free_ptr(int *arr);
 void free_ptr2(int **arr);
 int main(){
