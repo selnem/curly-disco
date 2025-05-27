@@ -15,4 +15,4 @@ parts=np.split(arr,3,axis=0)
 print(parts)
 parts=np.split(arr,[2,5],axis=0)
 print(parts)
-
+'''
